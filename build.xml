@@ -1,0 +1,22 @@
+<project name="ProjetGitAnt" default="package" basedir=".">
+    <property name="dist.dir" value="dist"/>
+
+    <target name="clean">
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${dist.dir}"/>
+        <echo message="Compilation du projet Ant..."/>
+    </target>
+
+    <target name="test" depends="compile">
+        <echo message="Execution des tests Ant..."/>
+        <echo message="Tests Ant réussis."/>
+    </target>
+
+    <target name="package" depends="test">
+        <echo message="Creation du package Ant..."/>
+        <copy file="index.html" todir="${dist.dir}"/>
+    </target>
+</project>
